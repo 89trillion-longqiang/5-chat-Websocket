@@ -24,8 +24,8 @@
 ├── router                  #路由
 │   └── router.go
 ├── preTest                  #压力测试
-    ├── report.html     #压力测试报告
-    ├── websocket_t.py #压力测试代码
+    ├── report.html          #压力测试报告
+    ├── websocket_t.py       #压力测试代码
 
 ```
 
