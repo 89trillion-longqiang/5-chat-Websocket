@@ -18,14 +18,15 @@
 │   ├── client.go
 │   ├── const.go
 │   └── hub.go
+├   └── protobuf                        
+│     ├── com.pb.go
+│     └── com.proto
 ├── newClient.go            #测试代码
-├── protobuf                
-│   ├── com.pb.go
-│   └── com.proto
 ├── router                  #路由
 │   └── router.go
-└── service             
-    └── service.go
+├── preTest                  #压力测试
+│   ├── report.html     #压力测试报告
+│   ├── websocket_t.py #压力测试代码
 
 ```
 
