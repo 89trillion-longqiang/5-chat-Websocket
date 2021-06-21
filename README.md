@@ -67,9 +67,17 @@
 ```
 
 #第三方库
+
+##protobuf
 ```
-google.golang.org/protobuf      通信数据的传输格式 protobuf
-github.com/gorilla/websocket    服务器
+用于 通信数据的传输格式 protobuf
+代码 https://google.golang.org/protobuf      
+
+```
+##websocket
+```
+用于 服务器搭建
+地址 https://github.com/gorilla/websocket    
 ```
 
 #流程图
