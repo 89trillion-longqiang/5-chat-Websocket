@@ -21,7 +21,6 @@
 ├   └── protobuf                        
 │     ├── com.pb.go
 │     └── com.proto
-├── newClient.go            #测试代码
 ├── router                  #路由
 │   └── router.go
 ├── preTest                  #压力测试
