@@ -1,9 +1,9 @@
 package module
 
 import (
+	protobuf2 "chat/module/protobuf"
 	"sync"
 
-	"chat/protobuf"
 	"google.golang.org/protobuf/proto"
 )
 
@@ -44,7 +44,7 @@ func (h *Hub) Run() {
 				for k, _ := range h.Clients {
 					userlist = userlist + "\n"+k.Username
 				}
-				sendByte,_ := proto.Marshal(&protobuf.Communication{Class: "userlist",Msg: userlist})
+				sendByte,_ := proto.Marshal(&protobuf2.Communication{Class: "userlist",Msg: userlist})
 				h.SendBroadcast(sendByte)
 				h.Lock.Unlock()
 			}

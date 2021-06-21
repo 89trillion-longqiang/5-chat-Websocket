@@ -1,11 +1,11 @@
 package module
 
 import (
+	protobuf2 "chat/module/protobuf"
 	"fmt"
 	"log"
 	"time"
 
-	"chat/protobuf"
 	"github.com/gorilla/websocket"
 	"google.golang.org/protobuf/proto"
 )
@@ -48,7 +48,7 @@ func (c *Client) ReadPump() {
 			break
 		}
 
-		var recCom protobuf.Communication
+		var recCom protobuf2.Communication
 		errUn := proto.Unmarshal(message,&recCom)
 		if errUn != nil {
 			log.Println(err)
@@ -61,14 +61,14 @@ func (c *Client) ReadPump() {
 					for k, _ := range c.Hub.Clients {
 						userList = k.Username + "\n" + userList
 					}
-					sendByte,_ := proto.Marshal(&protobuf.Communication{Class: "Talk",Msg: userList})
+					sendByte,_ := proto.Marshal(&protobuf2.Communication{Class: "Talk",Msg: userList})
 					err := c.Conn.WriteMessage(Talk, sendByte)
 					if err != nil {
 						log.Println(err)
 					}
 				}else {
 					log.Println(c.Username,":",string(recCom.Msg))
-					broMeg,_ := proto.Marshal(&protobuf.Communication{Class: "Talk",Msg: string(fmt.Sprintf("%s:%s", c.Username, recCom.Msg))})
+					broMeg,_ := proto.Marshal(&protobuf2.Communication{Class: "Talk",Msg: string(fmt.Sprintf("%s:%s", c.Username, recCom.Msg))})
 					//broMeg = bytes.TrimSpace(bytes.Replace(broMeg, newline, space, -1))
 					c.Hub.broadcast <- broMeg
 				}
@@ -138,6 +138,6 @@ func (c *Client)Online(){
 		}
 	}
 	c.Hub.Lock.Unlock()
-	sendByte,_ := proto.Marshal(&protobuf.Communication{Class:"userlist",Msg: userList})
+	sendByte,_ := proto.Marshal(&protobuf2.Communication{Class: "userlist",Msg: userList})
 	c.Hub.broadcast <- sendByte
 }
