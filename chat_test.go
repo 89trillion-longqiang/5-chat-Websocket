@@ -7,9 +7,7 @@ import (
 )
 
 func Test_NewHub(t *testing.T){
-
 	ret := module.NewHub()
-
 	if ret == nil {
 		t.Errorf("Tset_NewHub error ")
 	}else {
