@@ -74,5 +74,5 @@ github.com/gorilla/websocket    服务器
 ```
 
 #流程图
-![xxx](./picture/flowchart.png)
+![xxx](picture/flow.png)
 
