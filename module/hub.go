@@ -1,14 +1,16 @@
 package module
 
 import (
+	"sync"
+
 	"chat/protobuf"
 	"google.golang.org/protobuf/proto"
-	"log"
 )
 
 
 type Hub struct {
 	Clients    map[*Client]bool
+	Lock *sync.Mutex
 	broadcast  chan []byte
 	Register   chan *Client
 	unregister chan *Client
@@ -20,6 +22,7 @@ func NewHub() *Hub {
 		Register:   make(chan *Client),
 		unregister: make(chan *Client),
 		Clients:    make(map[*Client]bool),
+		Lock : &sync.Mutex{},
 	}
 }
 
@@ -30,30 +33,37 @@ func (h *Hub) Run() {
 			h.Clients[client] = true
 		case client := <-h.unregister:
 			if _, ok := h.Clients[client]; ok {
+
+				h.Lock.Lock()
 				delete(h.Clients, client)
+				h.Lock.Unlock()
 				close(client.Send)
+
 				userlist := ""
+				h.Lock.Lock()
 				for k, _ := range h.Clients {
 					userlist = userlist + "\n"+k.Username
 				}
 				sendByte,_ := proto.Marshal(&protobuf.Communication{Class: "userlist",Msg: userlist})
-				for k,_ := range h.Clients {
-					err := k.Conn.WriteMessage(1, sendByte)
-					if err != nil {
-						log.Println(err)
-					}
-				}
+				h.SendBroadcast(sendByte)
+				h.Lock.Unlock()
 			}
 
 		case message := <-h.broadcast:
-			for client := range h.Clients {
-				select {
-				case client.Send <- message:
-				default:
-					close(client.Send)
-					delete(h.Clients, client)
-				}
-			}
+			h.SendBroadcast(message)
+		}
+	}
+}
+
+func (h Hub)SendBroadcast(sendByte []byte){
+	for client := range h.Clients {
+		select {
+		case client.Send <- sendByte:
+		default:
+			close(client.Send)
+			h.Lock.Lock()
+			delete(h.Clients, client)
+			h.Lock.Unlock()
 		}
 	}
 }

@@ -131,11 +131,13 @@ func (c *Client) WritePump() {
 
 func (c *Client)Online(){
 	userList := ""
+	c.Hub.Lock.Lock()
 	for k, v := range c.Hub.Clients {
 		if v == true {
 			userList = k.Username + "\n" + userList
 		}
 	}
+	c.Hub.Lock.Unlock()
 	sendByte,_ := proto.Marshal(&protobuf.Communication{Class:"userlist",Msg: userList})
 	c.Hub.broadcast <- sendByte
 }

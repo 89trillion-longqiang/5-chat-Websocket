@@ -37,3 +37,12 @@
 2021/06/18 20:06:02 close tcp [::1]:8080->[::1]:58730: use of closed network connection
 2021/06/18 20:28:24 u1 : hi
 2021/06/18 20:28:36 close tcp [::1]:8080->[::1]:58808: use of closed network connection
+2021/06/18 21:32:53 lll : csdv
+2021/06/21 10:13:47 aaa : csc
+2021/06/21 10:13:51 close tcp [::1]:8080->[::1]:60425: use of closed network connection
+2021/06/21 10:14:29 u1 : sdds
+2021/06/21 10:14:30 u1 : sdfdf
+2021/06/21 10:14:32 u1 : sdfd
+2021/06/21 10:14:33 close tcp [::1]:8080->[::1]:60433: use of closed network connection
+2021/06/21 10:14:36 u1 : csdc
+2021/06/21 10:14:38 close tcp [::1]:8080->[::1]:60434: use of closed network connection
