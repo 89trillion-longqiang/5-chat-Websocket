@@ -15,7 +15,7 @@
 │   └── info.log
 ├── main.go                 #代码入口
 ├── module                  #数据模型
-│   ├── client.go
+│   ├── client.go     
 │   ├── const.go
 │   └── hub.go
 ├   └── protobuf                        
@@ -32,7 +32,7 @@
 #代码逻辑分层
 | 层     | 文件夹|主要职责 |调用关系|
 | :----: | :----|:---- | :-----|
-|router  | /router|路由转发 |调用handle|
+|router  | /router|路由转发 |调用handle module|
 |handle  | /handle|处理路由 |调用module|
 |module  | /module|数据模型 |被handle调用|
 
@@ -63,7 +63,6 @@
 #使用方法
 ```
 运行后，服务器接受客户端发来的请求，服务端进行对应的回复。
-测试代码运行后，可在终端中键入信息，按回车进行发送，返回对应的结果。
 ```
 
 #第三方库
