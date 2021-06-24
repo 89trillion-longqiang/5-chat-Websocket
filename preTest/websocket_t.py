@@ -5,6 +5,9 @@ import ssl
 import json
 import jsonpath
 
+from com_pb2 import Communication
+
+
 def eventType_success(eventType, recvText, total_time):
     events.request_success.fire(request_type="[RECV]",
                                 name=eventType,
@@ -63,8 +66,11 @@ class ApiUser(WebsocketUser):
         self.data = {}
         self.client.connect(self.url)
 
-        # 发送的订阅请求
-        sendMsg = 'Exit'
+        # 发送
+        com = Communication()
+        com.Msg = "hi"
+        com.Class = "Talk"
+        sendMsg = com.SerializeToString()
         self.client.send(sendMsg)
         
         while True:

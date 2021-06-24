@@ -99,7 +99,7 @@ table.stats {
 
         <div class="info">
             
-            <p>During: <span>2021-06-24 10:06:49 - 2021-06-24 10:10:28</span></p>
+            <p>During: <span>2021-06-24 12:44:29 - 2021-06-24 12:50:19</span></p>
             <p>Target Host: <span>ws://localhost:8080/</span></p>
         </div>
 
@@ -125,26 +125,26 @@ table.stats {
                         <tr>
                             <td>[Connect]</td>
                             <td>WebSocket</td>
-                            <td>103674</td>
+                            <td>141273</td>
                             <td>0</td>
-                            <td>7</td>
+                            <td>39</td>
+                            <td>1</td>
+                            <td>1531</td>
                             <td>0</td>
-                            <td>4134</td>
-                            <td>0</td>
-                            <td>475.2</td>
+                            <td>404.7</td>
                             <td>0.0</td>
                         </tr>
                     
                         <tr class="total">
                             <td></td>
                             <td>Aggregated</td>
-                            <td>103674</td>
+                            <td>141273</td>
                             <td>0</td>
-                            <td>7</td>
+                            <td>39</td>
+                            <td>1</td>
+                            <td>1531</td>
                             <td>0</td>
-                            <td>4134</td>
-                            <td>0</td>
-                            <td>475.2</td>
+                            <td>404.7</td>
                             <td>0.0</td>
                         </tr>
                     
@@ -174,27 +174,27 @@ table.stats {
                         <tr>
                             <td>[Connect]</td>
                             <td>WebSocket</td>
-                            <td>5</td>
-                            <td>6</td>
-                            <td>6</td>
-                            <td>6</td>
-                            <td>7</td>
-                            <td>8</td>
-                            <td>13</td>
-                            <td>4100</td>
+                            <td>28</td>
+                            <td>30</td>
+                            <td>32</td>
+                            <td>38</td>
+                            <td>77</td>
+                            <td>100</td>
+                            <td>190</td>
+                            <td>1500</td>
                         </tr>
                     
                         <tr class="total">
                             <td></td>
                             <td>Aggregated</td>
-                            <td>5</td>
-                            <td>6</td>
-                            <td>6</td>
-                            <td>6</td>
-                            <td>7</td>
-                            <td>8</td>
-                            <td>13</td>
-                            <td>4100</td>
+                            <td>28</td>
+                            <td>30</td>
+                            <td>32</td>
+                            <td>38</td>
+                            <td>77</td>
+                            <td>100</td>
+                            <td>190</td>
+                            <td>1500</td>
                         </tr>
                     
                 </tbody>
@@ -218,135 +218,26 @@ table.stats {
                     <tbody>
                         
                             <tr>
-                                <td>103575</td>
-                                <td>Connection to remote host was lost.</td>
+                                <td>141273</td>
+                                <td>cannot decode: b'\n\x08userlist\x12\x87\x01anonymous3\nanonymous11\nanonymous8\nanonymous5\nanonymous4\nanonymous1\nanonymous12\nanonymous10\nanonymous9\nanonymous7\nanonymous6\nanonymous2\n'</td>
                                 <td>  File "/Library/Python/3.8/site-packages/locust/user/task.py", line 290, in run
     self.execute_next_task()
   File "/Library/Python/3.8/site-packages/locust/user/task.py", line 315, in execute_next_task
     self.execute_task(self._task_queue.pop(0))
   File "/Library/Python/3.8/site-packages/locust/user/task.py", line 428, in execute_task
     task(self.user)
-  File "/Users/lilongqiang/chat/preTest/websocket_t.py", line 73, in pft
+  File "/Users/lilongqiang/chat/preTest/websocket_t.py", line 79, in pft
     recv = self.client.recv()
-  File "/Users/lilongqiang/chat/preTest/websocket_t.py", line 42, in recv
+  File "/Users/lilongqiang/chat/preTest/websocket_t.py", line 45, in recv
     return self.ws.recv()
   File "/Library/Python/3.8/site-packages/websocket/_core.py", line 353, in recv
     opcode, data = self.recv_data()
   File "/Library/Python/3.8/site-packages/websocket/_core.py", line 376, in recv_data
     opcode, frame = self.recv_data_frame(control_frame)
-  File "/Library/Python/3.8/site-packages/websocket/_core.py", line 395, in recv_data_frame
-    frame = self.recv_frame()
-  File "/Library/Python/3.8/site-packages/websocket/_core.py", line 434, in recv_frame
-    return self.frame_buffer.recv_frame()
-  File "/Library/Python/3.8/site-packages/websocket/_abnf.py", line 339, in recv_frame
-    self.recv_header()
-  File "/Library/Python/3.8/site-packages/websocket/_abnf.py", line 295, in recv_header
-    header = self.recv_strict(2)
-  File "/Library/Python/3.8/site-packages/websocket/_abnf.py", line 374, in recv_strict
-    bytes_ = self.recv(min(16384, shortage))
-  File "/Library/Python/3.8/site-packages/websocket/_core.py", line 518, in _recv
-    return recv(self.sock, bufsize)
-  File "/Library/Python/3.8/site-packages/websocket/_socket.py", line 127, in recv
-    raise WebSocketConnectionClosedException(
-</td>
-                                <td>l, o, c, a, l</td>
-                            </tr>
-                        
-                            <tr>
-                                <td>99</td>
-                                <td>[Errno 54] Connection reset by peer</td>
-                                <td>  File "/Library/Python/3.8/site-packages/locust/user/task.py", line 290, in run
-    self.execute_next_task()
-  File "/Library/Python/3.8/site-packages/locust/user/task.py", line 315, in execute_next_task
-    self.execute_task(self._task_queue.pop(0))
-  File "/Library/Python/3.8/site-packages/locust/user/task.py", line 428, in execute_task
-    task(self.user)
-  File "/Users/lilongqiang/chat/preTest/websocket_t.py", line 73, in pft
-    recv = self.client.recv()
-  File "/Users/lilongqiang/chat/preTest/websocket_t.py", line 42, in recv
-    return self.ws.recv()
-  File "/Library/Python/3.8/site-packages/websocket/_core.py", line 353, in recv
-    opcode, data = self.recv_data()
-  File "/Library/Python/3.8/site-packages/websocket/_core.py", line 376, in recv_data
-    opcode, frame = self.recv_data_frame(control_frame)
-  File "/Library/Python/3.8/site-packages/websocket/_core.py", line 395, in recv_data_frame
-    frame = self.recv_frame()
-  File "/Library/Python/3.8/site-packages/websocket/_core.py", line 434, in recv_frame
-    return self.frame_buffer.recv_frame()
-  File "/Library/Python/3.8/site-packages/websocket/_abnf.py", line 339, in recv_frame
-    self.recv_header()
-  File "/Library/Python/3.8/site-packages/websocket/_abnf.py", line 295, in recv_header
-    header = self.recv_strict(2)
-  File "/Library/Python/3.8/site-packages/websocket/_abnf.py", line 374, in recv_strict
-    bytes_ = self.recv(min(16384, shortage))
-  File "/Library/Python/3.8/site-packages/websocket/_core.py", line 518, in _recv
-    return recv(self.sock, bufsize)
-  File "/Library/Python/3.8/site-packages/websocket/_socket.py", line 115, in recv
-    bytes_ = _recv()
-  File "/Library/Python/3.8/site-packages/websocket/_socket.py", line 92, in _recv
-    return sock.recv(bufsize)
-  File "/Library/Python/3.8/site-packages/gevent/_socketcommon.py", line 657, in recv
-    return self._sock.recv(*args)
-</td>
-                                <td>l, o, c, a, l</td>
-                            </tr>
-                        
-                            <tr>
-                                <td>3</td>
-                                <td>[Errno 54] Connection reset by peer</td>
-                                <td>  File "/Library/Python/3.8/site-packages/locust/user/task.py", line 290, in run
-    self.execute_next_task()
-  File "/Library/Python/3.8/site-packages/locust/user/task.py", line 315, in execute_next_task
-    self.execute_task(self._task_queue.pop(0))
-  File "/Library/Python/3.8/site-packages/locust/user/task.py", line 428, in execute_task
-    task(self.user)
-  File "/Users/lilongqiang/chat/preTest/websocket_t.py", line 64, in pft
-    self.client.connect(self.url)
-  File "/Users/lilongqiang/chat/preTest/websocket_t.py", line 26, in connect
-    self.conn = self.ws.connect(url=burl)
-  File "/Library/Python/3.8/site-packages/websocket/_core.py", line 252, in connect
-    self.handshake_response = handshake(self.sock, *addrs, **options)
-  File "/Library/Python/3.8/site-packages/websocket/_handshake.py", line 59, in handshake
-    status, resp = _get_resp_headers(sock)
-  File "/Library/Python/3.8/site-packages/websocket/_handshake.py", line 143, in _get_resp_headers
-    status, resp_headers, status_message = read_headers(sock)
-  File "/Library/Python/3.8/site-packages/websocket/_http.py", line 300, in read_headers
-    line = recv_line(sock)
-  File "/Library/Python/3.8/site-packages/websocket/_socket.py", line 136, in recv_line
-    c = recv(sock, 1)
-  File "/Library/Python/3.8/site-packages/websocket/_socket.py", line 115, in recv
-    bytes_ = _recv()
-  File "/Library/Python/3.8/site-packages/websocket/_socket.py", line 92, in _recv
-    return sock.recv(bufsize)
-  File "/Library/Python/3.8/site-packages/gevent/_socketcommon.py", line 657, in recv
-    return self._sock.recv(*args)
-</td>
-                                <td>l, o, c, a, l</td>
-                            </tr>
-                        
-                            <tr>
-                                <td>5200</td>
-                                <td>[Errno 61] Connection refused</td>
-                                <td>  File "/Library/Python/3.8/site-packages/locust/user/task.py", line 290, in run
-    self.execute_next_task()
-  File "/Library/Python/3.8/site-packages/locust/user/task.py", line 315, in execute_next_task
-    self.execute_task(self._task_queue.pop(0))
-  File "/Library/Python/3.8/site-packages/locust/user/task.py", line 428, in execute_task
-    task(self.user)
-  File "/Users/lilongqiang/chat/preTest/websocket_t.py", line 64, in pft
-    self.client.connect(self.url)
-  File "/Users/lilongqiang/chat/preTest/websocket_t.py", line 26, in connect
-    self.conn = self.ws.connect(url=burl)
-  File "/Library/Python/3.8/site-packages/websocket/_core.py", line 248, in connect
-    self.sock, addrs = connect(url, self.sock_opt, proxy_info(**options),
-  File "/Library/Python/3.8/site-packages/websocket/_http.py", line 115, in connect
-    sock = _open_socket(addrinfo_list, options.sockopt, options.timeout)
-  File "/Library/Python/3.8/site-packages/websocket/_http.py", line 197, in _open_socket
-    raise err
-  File "/Library/Python/3.8/site-packages/websocket/_http.py", line 170, in _open_socket
-    sock.connect(address)
-  File "/Library/Python/3.8/site-packages/gevent/_socketcommon.py", line 607, in connect
-    raise _SocketError(err, strerror(err))
+  File "/Library/Python/3.8/site-packages/websocket/_core.py", line 409, in recv_data_frame
+    return self.cont_frame.extract(frame)
+  File "/Library/Python/3.8/site-packages/websocket/_abnf.py", line 422, in extract
+    raise WebSocketPayloadException(
 </td>
                                 <td>l, o, c, a, l</td>
                             </tr>
@@ -577,12 +468,12 @@ return new Za.prototype.init(a,b,c,d,e)}m.Tween=Za,Za.prototype={constructor:Za,
     <script>
         
 var stats_history = {
-    "time": ["10:06:52", "10:06:57", "10:07:02", "10:07:07", "10:07:12", "10:07:17", "10:07:22", "10:07:27", "10:07:32", "10:07:37", "10:07:42", "10:07:47", "10:07:52", "10:07:57", "10:08:02", "10:08:07", "10:08:12", "10:08:17", "10:08:22", "10:08:27", "10:08:32", "10:08:37", "10:08:42", "10:08:47", "10:08:52", "10:08:57", "10:09:02", "10:09:07", "10:09:12", "10:09:17", "10:09:23", "10:09:28", "10:09:33", "10:09:38", "10:09:43", "10:09:48", "10:09:53", "10:09:58", "10:10:03", "10:10:08", "10:10:13", "10:10:18", "10:10:23", "10:10:28", "10:10:33", "10:10:38", "10:10:43", "10:10:48"],
-    "user_count": [{"value": 3}, {"value": 5}, {"value": 5}, {"value": 5}, {"value": 5}, {"value": 5}, {"value": 5}, {"value": 5}, {"value": 5}, {"value": 5}, {"value": 5}, {"value": 5}, {"value": 5}, {"value": 5}, {"value": 5}, {"value": 5}, {"value": 5}, {"value": 5}, {"value": 5}, {"value": 5}, {"value": 5}, {"value": 5}, {"value": 5}, {"value": 5}, {"value": 5}, {"value": 5}, {"value": 5}, {"value": 5}, {"value": 5}, {"value": 5}, {"value": 5}, {"value": 5}, {"value": 5}, {"value": 5}, {"value": 5}, {"value": 5}, {"value": 5}, {"value": 5}, {"value": 5}, {"value": 5}, {"value": 5}, {"value": 5}, {"value": 5}, {"value": 5}, {"value": 5}, {"value": 5}, {"value": 5}, {"value": 5}],
-    "current_rps": [{"users": 3, "value": 56.0}, {"users": 5, "value": 434.1666666666667}, {"users": 5, "value": 547.0}, {"users": 5, "value": 601.4}, {"users": 5, "value": 591.5}, {"users": 5, "value": 509.7}, {"users": 5, "value": 469.2}, {"users": 5, "value": 295.2}, {"users": 5, "value": 301.0}, {"users": 5, "value": 468.3}, {"users": 5, "value": 488.4}, {"users": 5, "value": 566.2}, {"users": 5, "value": 564.8}, {"users": 5, "value": 569.9}, {"users": 5, "value": 361.9}, {"users": 5, "value": 341.3}, {"users": 5, "value": 504.7}, {"users": 5, "value": 483.0}, {"users": 5, "value": 526.0}, {"users": 5, "value": 549.9}, {"users": 5, "value": 546.9}, {"users": 5, "value": 415.0}, {"users": 5, "value": 392.2}, {"users": 5, "value": 483.9}, {"users": 5, "value": 520.1}, {"users": 5, "value": 550.0}, {"users": 5, "value": 530.0}, {"users": 5, "value": 477.3}, {"users": 5, "value": 401.2}, {"users": 5, "value": 409.6}, {"users": 5, "value": 471.6}, {"users": 5, "value": 432.5}, {"users": 5, "value": 374.8}, {"users": 5, "value": 446.6}, {"users": 5, "value": 550.0}, {"users": 5, "value": 544.4}, {"users": 5, "value": 488.9}, {"users": 5, "value": 515.5}, {"users": 5, "value": 417.9}, {"users": 5, "value": 368.4}, {"users": 5, "value": 449.6}, {"users": 5, "value": 467.8}, {"users": 5, "value": 475.0}, {"users": 5, "value": 478.3}, {"users": 5, "value": 478.3}, {"users": 5, "value": 478.3}, {"users": 5, "value": 478.3}, {"users": 5, "value": 478.3}],
-    "current_fail_per_sec": [{"users": 3, "value": 0}, {"users": 5, "value": 0}, {"users": 5, "value": 0}, {"users": 5, "value": 0}, {"users": 5, "value": 0}, {"users": 5, "value": 0}, {"users": 5, "value": 0}, {"users": 5, "value": 0}, {"users": 5, "value": 0}, {"users": 5, "value": 0}, {"users": 5, "value": 0}, {"users": 5, "value": 0}, {"users": 5, "value": 0}, {"users": 5, "value": 0}, {"users": 5, "value": 0}, {"users": 5, "value": 0}, {"users": 5, "value": 0}, {"users": 5, "value": 0}, {"users": 5, "value": 0}, {"users": 5, "value": 0}, {"users": 5, "value": 0}, {"users": 5, "value": 0}, {"users": 5, "value": 0}, {"users": 5, "value": 0}, {"users": 5, "value": 0}, {"users": 5, "value": 0}, {"users": 5, "value": 0}, {"users": 5, "value": 0}, {"users": 5, "value": 0}, {"users": 5, "value": 0}, {"users": 5, "value": 0}, {"users": 5, "value": 0}, {"users": 5, "value": 0}, {"users": 5, "value": 0}, {"users": 5, "value": 0}, {"users": 5, "value": 0}, {"users": 5, "value": 0}, {"users": 5, "value": 0}, {"users": 5, "value": 0}, {"users": 5, "value": 0}, {"users": 5, "value": 0}, {"users": 5, "value": 0}, {"users": 5, "value": 0}, {"users": 5, "value": 0}, {"users": 5, "value": 0}, {"users": 5, "value": 0}, {"users": 5, "value": 0}, {"users": 5, "value": 0}],
-    "response_time_percentile_50": [{"users": 3, "value": 2}, {"users": 5, "value": 5}, {"users": 5, "value": 6}, {"users": 5, "value": 5}, {"users": 5, "value": 6}, {"users": 5, "value": 7}, {"users": 5, "value": 7}, {"users": 5, "value": 6}, {"users": 5, "value": 6}, {"users": 5, "value": 5}, {"users": 5, "value": 5}, {"users": 5, "value": 5}, {"users": 5, "value": 5}, {"users": 5, "value": 5}, {"users": 5, "value": 5}, {"users": 5, "value": 5}, {"users": 5, "value": 5}, {"users": 5, "value": 5}, {"users": 5, "value": 5}, {"users": 5, "value": 5}, {"users": 5, "value": 5}, {"users": 5, "value": 5}, {"users": 5, "value": 5}, {"users": 5, "value": 5}, {"users": 5, "value": 5}, {"users": 5, "value": 5}, {"users": 5, "value": 5}, {"users": 5, "value": 5}, {"users": 5, "value": 5}, {"users": 5, "value": 5}, {"users": 5, "value": 5}, {"users": 5, "value": 6}, {"users": 5, "value": 6}, {"users": 5, "value": 5}, {"users": 5, "value": 5}, {"users": 5, "value": 5}, {"users": 5, "value": 5}, {"users": 5, "value": 5}, {"users": 5, "value": 5}, {"users": 5, "value": 5}, {"users": 5, "value": 5}, {"users": 5, "value": 6}, {"users": 5, "value": 6}, {"users": 5, "value": 6}, {"users": 5, "value": 6}, {"users": 5, "value": 6}, {"users": 5, "value": 6}, {"users": 5, "value": 0}],
-    "response_time_percentile_95": [{"users": 3, "value": 5}, {"users": 5, "value": 9}, {"users": 5, "value": 9}, {"users": 5, "value": 8}, {"users": 5, "value": 10}, {"users": 5, "value": 12}, {"users": 5, "value": 12}, {"users": 5, "value": 10}, {"users": 5, "value": 10}, {"users": 5, "value": 10}, {"users": 5, "value": 8}, {"users": 5, "value": 7}, {"users": 5, "value": 7}, {"users": 5, "value": 7}, {"users": 5, "value": 7}, {"users": 5, "value": 7}, {"users": 5, "value": 7}, {"users": 5, "value": 7}, {"users": 5, "value": 7}, {"users": 5, "value": 7}, {"users": 5, "value": 7}, {"users": 5, "value": 7}, {"users": 5, "value": 7}, {"users": 5, "value": 7}, {"users": 5, "value": 7}, {"users": 5, "value": 7}, {"users": 5, "value": 7}, {"users": 5, "value": 7}, {"users": 5, "value": 7}, {"users": 5, "value": 7}, {"users": 5, "value": 9}, {"users": 5, "value": 11}, {"users": 5, "value": 11}, {"users": 5, "value": 8}, {"users": 5, "value": 8}, {"users": 5, "value": 8}, {"users": 5, "value": 8}, {"users": 5, "value": 8}, {"users": 5, "value": 8}, {"users": 5, "value": 8}, {"users": 5, "value": 8}, {"users": 5, "value": 9}, {"users": 5, "value": 9}, {"users": 5, "value": 9}, {"users": 5, "value": 8}, {"users": 5, "value": 7}, {"users": 5, "value": 7}, {"users": 5, "value": 0}],
+    "time": ["12:44:32", "12:44:37", "12:44:42", "12:44:47", "12:44:52", "12:44:57", "12:45:02", "12:45:07", "12:45:12", "12:45:17", "12:45:22", "12:45:27", "12:45:32", "12:45:37", "12:45:42", "12:45:47", "12:45:52", "12:45:57", "12:46:02", "12:46:07", "12:46:12", "12:46:17", "12:46:22", "12:46:27", "12:46:32", "12:46:37", "12:46:42", "12:46:47", "12:46:52", "12:46:57", "12:47:02", "12:47:07", "12:47:12", "12:47:17", "12:47:22", "12:47:27", "12:47:33", "12:47:38", "12:47:43", "12:47:48", "12:47:53", "12:47:58", "12:48:03", "12:48:08", "12:48:13", "12:48:18", "12:48:23", "12:48:28", "12:48:33", "12:48:38", "12:48:43", "12:48:48", "12:48:53", "12:48:58", "12:49:03", "12:49:08", "12:49:13", "12:49:18", "12:49:23", "12:49:28", "12:49:33", "12:49:38", "12:49:43", "12:49:48", "12:49:53", "12:49:58", "12:50:03", "12:50:08", "12:50:13", "12:50:18"],
+    "user_count": [{"value": 8}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}],
+    "current_rps": [{"users": 8, "value": 1.0}, {"users": 20, "value": 123.33333333333333}, {"users": 20, "value": 369.5}, {"users": 20, "value": 546.8}, {"users": 20, "value": 527.0}, {"users": 20, "value": 554.3}, {"users": 20, "value": 585.2}, {"users": 20, "value": 603.3}, {"users": 20, "value": 596.2}, {"users": 20, "value": 586.9}, {"users": 20, "value": 614.5}, {"users": 20, "value": 661.8}, {"users": 20, "value": 659.5}, {"users": 20, "value": 663.1}, {"users": 20, "value": 670.3}, {"users": 20, "value": 653.4}, {"users": 20, "value": 652.2}, {"users": 20, "value": 667.4}, {"users": 20, "value": 659.9}, {"users": 20, "value": 623.8}, {"users": 20, "value": 611.2}, {"users": 20, "value": 641.2}, {"users": 20, "value": 667.3}, {"users": 20, "value": 617.2}, {"users": 20, "value": 588.7}, {"users": 20, "value": 623.6}, {"users": 20, "value": 605.5}, {"users": 20, "value": 584.3}, {"users": 20, "value": 578.6}, {"users": 20, "value": 582.3}, {"users": 20, "value": 606.6}, {"users": 20, "value": 602.8}, {"users": 20, "value": 603.9}, {"users": 20, "value": 599.5}, {"users": 20, "value": 579.3}, {"users": 20, "value": 331.3}, {"users": 20, "value": 122.3}, {"users": 20, "value": 160.7}, {"users": 20, "value": 166.2}, {"users": 20, "value": 171.3}, {"users": 20, "value": 214.6}, {"users": 20, "value": 248.5}, {"users": 20, "value": 242.4}, {"users": 20, "value": 244.2}, {"users": 20, "value": 238.9}, {"users": 20, "value": 224.0}, {"users": 20, "value": 212.7}, {"users": 20, "value": 203.5}, {"users": 20, "value": 204.7}, {"users": 20, "value": 216.2}, {"users": 20, "value": 224.3}, {"users": 20, "value": 177.4}, {"users": 20, "value": 113.0}, {"users": 20, "value": 146.1}, {"users": 20, "value": 212.6}, {"users": 20, "value": 230.1}, {"users": 20, "value": 248.9}, {"users": 20, "value": 247.6}, {"users": 20, "value": 208.4}, {"users": 20, "value": 182.3}, {"users": 20, "value": 189.3}, {"users": 20, "value": 176.2}, {"users": 20, "value": 219.0}, {"users": 20, "value": 288.1}, {"users": 20, "value": 291.3}, {"users": 20, "value": 310.3}, {"users": 20, "value": 317.3}, {"users": 20, "value": 309.4}, {"users": 20, "value": 303.3}, {"users": 20, "value": 272.8}],
+    "current_fail_per_sec": [{"users": 8, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}],
+    "response_time_percentile_50": [{"users": 8, "value": 2}, {"users": 20, "value": 23}, {"users": 20, "value": 27}, {"users": 20, "value": 30}, {"users": 20, "value": 30}, {"users": 20, "value": 28}, {"users": 20, "value": 27}, {"users": 20, "value": 27}, {"users": 20, "value": 27}, {"users": 20, "value": 27}, {"users": 20, "value": 25}, {"users": 20, "value": 24}, {"users": 20, "value": 25}, {"users": 20, "value": 25}, {"users": 20, "value": 25}, {"users": 20, "value": 25}, {"users": 20, "value": 25}, {"users": 20, "value": 24}, {"users": 20, "value": 25}, {"users": 20, "value": 26}, {"users": 20, "value": 25}, {"users": 20, "value": 25}, {"users": 20, "value": 25}, {"users": 20, "value": 26}, {"users": 20, "value": 26}, {"users": 20, "value": 27}, {"users": 20, "value": 27}, {"users": 20, "value": 27}, {"users": 20, "value": 27}, {"users": 20, "value": 27}, {"users": 20, "value": 27}, {"users": 20, "value": 27}, {"users": 20, "value": 27}, {"users": 20, "value": 27}, {"users": 20, "value": 26}, {"users": 20, "value": 28}, {"users": 20, "value": 44}, {"users": 20, "value": 45}, {"users": 20, "value": 90}, {"users": 20, "value": 54}, {"users": 20, "value": 43}, {"users": 20, "value": 45}, {"users": 20, "value": 45}, {"users": 20, "value": 49}, {"users": 20, "value": 49}, {"users": 20, "value": 52}, {"users": 20, "value": 56}, {"users": 20, "value": 69}, {"users": 20, "value": 62}, {"users": 20, "value": 58}, {"users": 20, "value": 59}, {"users": 20, "value": 56}, {"users": 20, "value": 100}, {"users": 20, "value": 84}, {"users": 20, "value": 37}, {"users": 20, "value": 32}, {"users": 20, "value": 31}, {"users": 20, "value": 36}, {"users": 20, "value": 49}, {"users": 20, "value": 41}, {"users": 20, "value": 82}, {"users": 20, "value": 48}, {"users": 20, "value": 39}, {"users": 20, "value": 39}, {"users": 20, "value": 39}, {"users": 20, "value": 39}, {"users": 20, "value": 37}, {"users": 20, "value": 37}, {"users": 20, "value": 42}, {"users": 20, "value": 45}],
+    "response_time_percentile_95": [{"users": 8, "value": 2}, {"users": 20, "value": 34}, {"users": 20, "value": 39}, {"users": 20, "value": 44}, {"users": 20, "value": 44}, {"users": 20, "value": 40}, {"users": 20, "value": 36}, {"users": 20, "value": 38}, {"users": 20, "value": 38}, {"users": 20, "value": 38}, {"users": 20, "value": 35}, {"users": 20, "value": 33}, {"users": 20, "value": 33}, {"users": 20, "value": 32}, {"users": 20, "value": 34}, {"users": 20, "value": 34}, {"users": 20, "value": 33}, {"users": 20, "value": 33}, {"users": 20, "value": 36}, {"users": 20, "value": 38}, {"users": 20, "value": 37}, {"users": 20, "value": 32}, {"users": 20, "value": 33}, {"users": 20, "value": 37}, {"users": 20, "value": 38}, {"users": 20, "value": 38}, {"users": 20, "value": 38}, {"users": 20, "value": 44}, {"users": 20, "value": 43}, {"users": 20, "value": 37}, {"users": 20, "value": 35}, {"users": 20, "value": 37}, {"users": 20, "value": 40}, {"users": 20, "value": 38}, {"users": 20, "value": 44}, {"users": 20, "value": 400}, {"users": 20, "value": 480}, {"users": 20, "value": 300}, {"users": 20, "value": 380}, {"users": 20, "value": 230}, {"users": 20, "value": 140}, {"users": 20, "value": 140}, {"users": 20, "value": 150}, {"users": 20, "value": 140}, {"users": 20, "value": 160}, {"users": 20, "value": 170}, {"users": 20, "value": 170}, {"users": 20, "value": 170}, {"users": 20, "value": 170}, {"users": 20, "value": 140}, {"users": 20, "value": 130}, {"users": 20, "value": 620}, {"users": 20, "value": 610}, {"users": 20, "value": 230}, {"users": 20, "value": 150}, {"users": 20, "value": 150}, {"users": 20, "value": 120}, {"users": 20, "value": 180}, {"users": 20, "value": 240}, {"users": 20, "value": 200}, {"users": 20, "value": 330}, {"users": 20, "value": 230}, {"users": 20, "value": 120}, {"users": 20, "value": 100}, {"users": 20, "value": 98}, {"users": 20, "value": 94}, {"users": 20, "value": 93}, {"users": 20, "value": 96}, {"users": 20, "value": 120}, {"users": 20, "value": 130}],
 };
         var rpsChart = new LocustLineChart($(".charts-container"), "Total Requests per Second", ["RPS", "Failures/s"], "reqs/s", ['#00ca5a', '#ff6d6d']);
         var responseTimeChart = new LocustLineChart($(".charts-container"), "Response Times (ms)", ["Median Response Time", "95% percentile"], "ms");

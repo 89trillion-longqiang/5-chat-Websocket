@@ -1,0 +1,9 @@
+syntax = "proto3";
+package com;
+
+option go_package="/Users/lilongqiang/chat/protobuf";
+
+message Communication{
+    string Class = 1;
+    string Msg = 2 ;
+}
