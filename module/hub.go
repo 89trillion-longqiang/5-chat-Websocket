@@ -4,8 +4,9 @@ import (
 	"fmt"
 	"sync"
 
-	"chat/module/protobuf"
 	"google.golang.org/protobuf/proto"
+
+	"chat/module/protobuf"
 )
 
 

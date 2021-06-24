@@ -5,9 +5,10 @@ import (
 	"log"
 	"time"
 
-	"chat/module/protobuf"
 	"github.com/gorilla/websocket"
 	"google.golang.org/protobuf/proto"
+
+	"chat/module/protobuf"
 )
 
 var (
