@@ -6,7 +6,6 @@ import (
 	"net/http"
 	"os"
 
-	"chat/module"
 	"chat/router"
 )
 
@@ -22,10 +21,9 @@ func main() {
 	defer file.Close()
 
 	flag.Parse()
-	hub := module.NewHub()
-	go hub.Run()
 
-	router.SetupHttp(hub)
+
+	router.SetupHttp()
 	err_http := http.ListenAndServe(*addr, nil)
 	if err_http != nil {
 		log.Fatal("ListenAndServe: ", err_http)

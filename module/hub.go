@@ -1,7 +1,7 @@
 package module
 
 import (
-
+	"fmt"
 	"sync"
 
 	"chat/module/protobuf"
@@ -11,19 +11,19 @@ import (
 
 type Hub struct {
 	Clients    map[*Client]bool
-	Lock *sync.Mutex
-	broadcast  chan []byte
+	Lock       *sync.Mutex
+	Broadcast  chan []byte
 	Register   chan *Client
-	unregister chan *Client
+	Unregister chan *Client
 }
 
 func NewHub() *Hub {
 	return &Hub{
-		broadcast:  make(chan []byte),
+		Broadcast:  make(chan []byte),
 		Register:   make(chan *Client),
-		unregister: make(chan *Client),
+		Unregister: make(chan *Client),
 		Clients:    make(map[*Client]bool),
-		Lock : &sync.Mutex{},
+		Lock :      &sync.Mutex{},
 	}
 }
 
@@ -31,10 +31,13 @@ func (h *Hub) Run() {
 	for {
 		select {
 		case client := <-h.Register:
+			h.Lock.Lock()
 			h.Clients[client] = true
-		case client := <-h.unregister:
+			h.Lock.Unlock()
+		case client := <-h.Unregister:
 			if _, ok := h.Clients[client]; ok {
 
+				fmt.Println("client close :", client.Conn.RemoteAddr())
 				h.Lock.Lock()
 				delete(h.Clients, client)
 				h.Lock.Unlock()
@@ -50,7 +53,7 @@ func (h *Hub) Run() {
 				h.Lock.Unlock()
 			}
 
-		case message := <-h.broadcast:
+		case message := <-h.Broadcast:
 			h.SendBroadcast(message)
 		}
 	}

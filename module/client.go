@@ -1,7 +1,6 @@
 package module
 
 import (
-
 	"fmt"
 	"log"
 	"time"
@@ -10,8 +9,6 @@ import (
 	"github.com/gorilla/websocket"
 	"google.golang.org/protobuf/proto"
 )
-
-
 
 var (
 	newline = []byte{'\n'}
@@ -31,15 +28,15 @@ type Client struct {
 
 func (c *Client) ReadPump() {
 	defer func() {
-		c.Hub.unregister <- c
+		c.Hub.Unregister <- c
 		c.Conn.Close()
 	}()
-	c.Conn.SetReadLimit(maxMessageSize)
-	err := c.Conn.SetReadDeadline(time.Now().Add(pongWait))
+	c.Conn.SetReadLimit(MaxMessageSize)
+	err := c.Conn.SetReadDeadline(time.Now().Add(PongWait))
 	if err != nil {
 		log.Println(err)
 	}
-	c.Conn.SetPongHandler(func(string) error { c.Conn.SetReadDeadline(time.Now().Add(pongWait)); return nil })
+	c.Conn.SetPongHandler(func(string) error { c.Conn.SetReadDeadline(time.Now().Add(PongWait)); return nil })
 	for {
 		msgType, message, err := c.Conn.ReadMessage()
 		if err != nil {
@@ -71,7 +68,7 @@ func (c *Client) ReadPump() {
 					log.Println(c.Username,":",string(recCom.Msg))
 					broMeg,_ := proto.Marshal(&protobuf.Communication{Class: "Talk",Msg: string(fmt.Sprintf("%s:%s", c.Username, recCom.Msg))})
 					//broMeg = bytes.TrimSpace(bytes.Replace(broMeg, newline, space, -1))
-					c.Hub.broadcast <- broMeg
+					c.Hub.Broadcast <- broMeg
 				}
 			}
 			case Exit:{
@@ -83,7 +80,7 @@ func (c *Client) ReadPump() {
 }
 
 func (c *Client) WritePump() {
-	ticker := time.NewTicker(pingPeriod)
+	ticker := time.NewTicker(PingPeriod)
 	defer func() {
 		ticker.Stop()
 		err := c.Conn.Close()
@@ -95,7 +92,7 @@ func (c *Client) WritePump() {
 	for {
 		select {
 		case message, ok := <-c.Send:
-			err := c.Conn.SetWriteDeadline(time.Now().Add(writeWait))
+			err := c.Conn.SetWriteDeadline(time.Now().Add(WriteWait))
 			if err != nil {
 				log.Println(err)
 			}
@@ -122,7 +119,7 @@ func (c *Client) WritePump() {
 				return
 			}
 		case <-ticker.C:
-			c.Conn.SetWriteDeadline(time.Now().Add(writeWait))
+			c.Conn.SetWriteDeadline(time.Now().Add(WriteWait))
 			if err := c.Conn.WriteMessage(websocket.PingMessage, nil); err != nil {
 				return
 			}
@@ -140,5 +137,5 @@ func (c *Client)Online(){
 	}
 	c.Hub.Lock.Unlock()
 	sendByte,_ := proto.Marshal(&protobuf.Communication{Class: "userlist",Msg: userList})
-	c.Hub.broadcast <- sendByte
+	c.Hub.Broadcast <- sendByte
 }
