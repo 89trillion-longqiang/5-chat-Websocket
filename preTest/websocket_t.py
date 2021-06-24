@@ -53,21 +53,18 @@ class WebsocketUser(User):
         
 class ApiUser(WebsocketUser):
     # host = "wss://ws.xxxxx.com/"
-    host = "ws://127.0.0.1:8080/"
+    host = "ws://localhost:8080/"
     wait_time = constant(0)
-    
+    #http://0.0.0.0:8089
     @task(1)
     def pft(self):
         # wss 地址
-        self.url = 'ws://127.0.0.1:8080/ws?appid=futures&uid=10000000'
+        self.url = 'ws://localhost:8080/ws'
         self.data = {}
         self.client.connect(self.url)
-        
+
         # 发送的订阅请求
-        sendMsg = '{"appid":"futures","cover":0,"event":[\
-            {"type":"exchange_rate","toggle":1,"expireTime":86400},\
-            {"type":"accountInfo_USDT","toggle":1,"expireTime":86400},\
-            {"type":"ticker_BTC/USDT","toggle":1,"expireTime":86400}]}'
+        sendMsg = 'Exit'
         self.client.send(sendMsg)
         
         while True:
